@@ -47,3 +47,25 @@ iOS
 #### License
 
 Apache license 2.0 - Use this plugin for any production / development needs, and if you'd like to make an attribution to me somewhere.
+
+
+#### Upload File  显示上传进度
+
+ 
+	var ft = new FileTransfer();
+  	ft.onprogress = showUploadingProgress;
+
+                function showUploadingProgress(progressEvt) {
+
+                    console.log("showUploadingProgress->上传进度...." + Math.round((progressEvt.loaded / progressEvt.total) * 100));
+                    var pro = Math.round((progressEvt.loaded / progressEvt.total) * 100);
+                    //ProgressIndicator.showSimple(true);
+
+                    if (device.platform === 'iOS') {
+                        ProgressIndicator.showSimpleWithLabelDetail(true, 'Uploading...', pro + "%")
+
+                    } else if (device.platform === 'Android') {
+                        ProgressIndicator.show("show", true, 'Uploading...', pro + "% Uploading...")
+                    }
+
+                }
