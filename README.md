@@ -1,3 +1,5 @@
+## 继承 cordova-progressIndicator 并修改使其适合自己的项目，调用 FileTransfer 上传图片时调用该插件
+# 
 # Cordova Progress-Indicator Plugin#
 This plugin allows you to show a native Progress Indicator on iOS - by [Paolo Bernasconi](https://github.com/pbernasconi)
 
